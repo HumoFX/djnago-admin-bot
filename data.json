@@ -1,0 +1,2002 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "bot",
+    "model": "telegramuser"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "bot",
+    "model": "feedback"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "bot",
+    "model": "command"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "product",
+    "model": "cart"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "product",
+    "model": "category"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "product",
+    "model": "product"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "product",
+    "model": "order"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "product",
+    "model": "cartitem"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "0px1lm2lcwx6o6a9o01xrgiiuelosr5l",
+  "fields": {
+    "session_data": "YWMzZWMzMDg4YzIzZWE2NjU5NjU0ODdmZTVhNGUxNmMyYzYyYjNiNjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIxMTU2OTUzMTRkZmUyNWIxMmY3Yzg5Y2RkMTVjYmQyZjE5NzFlZTJhIn0=",
+    "expire_date": "2020-03-07T13:11:01.465"
+  }
+},
+{
+  "model": "bot.telegramuser",
+  "pk": 1,
+  "fields": {
+    "telegram_id": 841108314,
+    "first_name": "\u0e53\u0e04\u0e23h\u0433\u0e04\u0e52",
+    "last_name": "\u3164\u3164\u3164\u3164\u3164\u3164\u3164\u3164",
+    "username": "Mashrabjon",
+    "phone_number": "+998998881211",
+    "step": 1,
+    "language": "\ud83c\uddfa\ud83c\uddf8 English",
+    "date_joined": "2020-02-22T13:10:57.362",
+    "is_registered": true
+  }
+},
+{
+  "model": "bot.feedback",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "text": "sdsa",
+    "created": "2020-02-22T14:14:35.579"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\uded2 Make order",
+    "from_menu": null,
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7742,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T13:10:58.637"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 2,
+  "fields": {
+    "user": 1,
+    "text": "\ud83c\uddfa\ud83c\uddff \ud83c\uddf7\ud83c\uddfa \ud83c\uddfa\ud83c\uddf8 Language",
+    "from_menu": null,
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7741,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T13:10:59.474"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 3,
+  "fields": {
+    "user": 1,
+    "text": "/start",
+    "from_menu": null,
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7745,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T13:16:10.568"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 4,
+  "fields": {
+    "user": 1,
+    "text": "/start",
+    "from_menu": null,
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7747,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:13:16.678"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 5,
+  "fields": {
+    "user": 1,
+    "text": "register",
+    "from_menu": null,
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7749,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:13:18.331"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 6,
+  "fields": {
+    "user": 1,
+    "text": "/start",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7752,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:14:19.223"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 7,
+  "fields": {
+    "user": 1,
+    "text": "\ud83c\uddfa\ud83c\uddff \ud83c\uddf7\ud83c\uddfa \ud83c\uddfa\ud83c\uddf8 Language",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "language",
+    "message_id": 7754,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:14:21.270"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 8,
+  "fields": {
+    "user": 1,
+    "text": "\ud83c\uddfa\ud83c\uddff O'zbekcha",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7756,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:14:22.860"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 9,
+  "fields": {
+    "user": 1,
+    "text": "\ud83c\uddfa\ud83c\uddff \ud83c\uddf7\ud83c\uddfa \ud83c\uddfa\ud83c\uddf8 Language",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "language",
+    "message_id": 7758,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:14:25.749"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 10,
+  "fields": {
+    "user": 1,
+    "text": "\ud83c\uddf7\ud83c\uddfa \u0420\u0443\u0441\u0441\u043a\u0438\u0439",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7760,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:14:26.731"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 11,
+  "fields": {
+    "user": 1,
+    "text": "\ud83c\uddfa\ud83c\uddff \ud83c\uddf7\ud83c\uddfa \ud83c\uddfa\ud83c\uddf8 Language",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "language",
+    "message_id": 7762,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:14:27.877"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 12,
+  "fields": {
+    "user": 1,
+    "text": "\ud83c\uddfa\ud83c\uddf8 English",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7764,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:14:29.021"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 13,
+  "fields": {
+    "user": 1,
+    "text": "\u270d\ufe0f Feedback",
+    "from_menu": "home",
+    "current_menu": "feedback",
+    "to_menu": "home",
+    "message_id": 7766,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:14:30.756"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 14,
+  "fields": {
+    "user": 1,
+    "text": "Back",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7768,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:14:32.223"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 15,
+  "fields": {
+    "user": 1,
+    "text": "\u270d\ufe0f Feedback",
+    "from_menu": "home",
+    "current_menu": "feedback",
+    "to_menu": "home",
+    "message_id": 7770,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:14:33.557"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 16,
+  "fields": {
+    "user": 1,
+    "text": "sdsa",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7772,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:14:35.770"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 17,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\udecd My Orders",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7774,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:14:37.577"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 18,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\uded2 Cart",
+    "from_menu": "home",
+    "current_menu": "home",
+    "to_menu": "home",
+    "message_id": 7776,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:14:38.731"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 19,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\uded2 Make order",
+    "from_menu": "home",
+    "current_menu": "category",
+    "to_menu": "product",
+    "message_id": 7778,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:14:40.437"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 20,
+  "fields": {
+    "user": 1,
+    "text": "Lavash",
+    "from_menu": "category",
+    "current_menu": "product",
+    "to_menu": "pieces",
+    "message_id": 7781,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:15:06.326"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 21,
+  "fields": {
+    "user": 1,
+    "text": "Back",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7783,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:15:07.980"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 22,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\uded2 Make order",
+    "from_menu": "home",
+    "current_menu": "category",
+    "to_menu": "product",
+    "message_id": 7785,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:15:08.998"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 23,
+  "fields": {
+    "user": 1,
+    "text": "Lavash",
+    "from_menu": "category",
+    "current_menu": "product",
+    "to_menu": "pieces",
+    "message_id": 7787,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:15:09.957"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 24,
+  "fields": {
+    "user": 1,
+    "text": "Tovuqli lavash",
+    "from_menu": "product",
+    "current_menu": "pieces",
+    "to_menu": "add to cart",
+    "message_id": 7789,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:15:12.628"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 25,
+  "fields": {
+    "user": 1,
+    "text": "1",
+    "from_menu": "home",
+    "current_menu": "add to cart",
+    "to_menu": "product",
+    "message_id": 7791,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:15:13.631"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 26,
+  "fields": {
+    "user": 1,
+    "text": "Ichimliklar",
+    "from_menu": "category",
+    "current_menu": "product",
+    "to_menu": "pieces",
+    "message_id": 7793,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:15:17.202"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 27,
+  "fields": {
+    "user": 1,
+    "text": "Cola",
+    "from_menu": "product",
+    "current_menu": "pieces",
+    "to_menu": "add to cart",
+    "message_id": 7795,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:15:18.197"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 28,
+  "fields": {
+    "user": 1,
+    "text": "2",
+    "from_menu": "home",
+    "current_menu": "add to cart",
+    "to_menu": "product",
+    "message_id": 7797,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:15:18.981"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 29,
+  "fields": {
+    "user": 1,
+    "text": "Back",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7799,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:15:20.764"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 30,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\uded2 Cart",
+    "from_menu": "home",
+    "current_menu": "finish_order",
+    "to_menu": "home",
+    "message_id": 7801,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:15:22.374"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 31,
+  "fields": {
+    "user": 1,
+    "text": "Finish order",
+    "from_menu": "finish_order",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7803,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:15:36.919"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 32,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\udecd My Orders",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7805,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:15:38.608"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 33,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\uded2 Cart",
+    "from_menu": "home",
+    "current_menu": "home",
+    "to_menu": "home",
+    "message_id": 7807,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:15:39.591"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 34,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\uded2 Make order",
+    "from_menu": "home",
+    "current_menu": "category",
+    "to_menu": "product",
+    "message_id": 7809,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:17:24.537"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 35,
+  "fields": {
+    "user": 1,
+    "text": "Donar",
+    "from_menu": "category",
+    "current_menu": "product",
+    "to_menu": "pieces",
+    "message_id": 7811,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:17:25.486"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 36,
+  "fields": {
+    "user": 1,
+    "text": "Kichik donar",
+    "from_menu": "product",
+    "current_menu": "pieces",
+    "to_menu": "add to cart",
+    "message_id": 7813,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:17:26.819"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 37,
+  "fields": {
+    "user": 1,
+    "text": "1",
+    "from_menu": "home",
+    "current_menu": "add to cart",
+    "to_menu": "product",
+    "message_id": 7815,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:17:28.339"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 38,
+  "fields": {
+    "user": 1,
+    "text": "Back",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7817,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:17:30.481"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 39,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\uded2 Cart",
+    "from_menu": "home",
+    "current_menu": "finish_order",
+    "to_menu": "home",
+    "message_id": 7819,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:17:34.036"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 40,
+  "fields": {
+    "user": 1,
+    "text": "Back",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7821,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:17:39.337"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 41,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\uded2 Cart",
+    "from_menu": "home",
+    "current_menu": "finish_order",
+    "to_menu": "home",
+    "message_id": 7823,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:20:05.851"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 42,
+  "fields": {
+    "user": 1,
+    "text": "Finish order",
+    "from_menu": "finish_order",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7825,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:20:07.719"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 43,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\udecd My Orders",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7827,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:20:14.177"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 44,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\uded2 Make order",
+    "from_menu": "home",
+    "current_menu": "category",
+    "to_menu": "product",
+    "message_id": 7829,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:20:37.014"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 45,
+  "fields": {
+    "user": 1,
+    "text": "Lavash",
+    "from_menu": "category",
+    "current_menu": "product",
+    "to_menu": "pieces",
+    "message_id": 7831,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:20:37.996"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 46,
+  "fields": {
+    "user": 1,
+    "text": "Tovuqli lavash",
+    "from_menu": "product",
+    "current_menu": "pieces",
+    "to_menu": "add to cart",
+    "message_id": 7833,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:20:39.348"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 47,
+  "fields": {
+    "user": 1,
+    "text": "2",
+    "from_menu": "home",
+    "current_menu": "add to cart",
+    "to_menu": "product",
+    "message_id": 7835,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:20:40.176"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 48,
+  "fields": {
+    "user": 1,
+    "text": "Back",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7837,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:20:42.330"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 49,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\uded2 Cart",
+    "from_menu": "category",
+    "current_menu": "product",
+    "to_menu": "pieces",
+    "message_id": 7839,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:20:43.608"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 50,
+  "fields": {
+    "user": 1,
+    "text": "Back",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7841,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:20:46.092"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 51,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\uded2 Cart",
+    "from_menu": "home",
+    "current_menu": "finish_order",
+    "to_menu": "home",
+    "message_id": 7843,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:20:47.013"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 52,
+  "fields": {
+    "user": 1,
+    "text": "Finish order",
+    "from_menu": "finish_order",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7845,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:21:39.340"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 53,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\uded2 Cart",
+    "from_menu": "home",
+    "current_menu": "finish_order",
+    "to_menu": "home",
+    "message_id": 7847,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:21:40.782"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 54,
+  "fields": {
+    "user": 1,
+    "text": "Back",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7849,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:21:44.170"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 55,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\uded2 Cart",
+    "from_menu": "home",
+    "current_menu": "finish_order",
+    "to_menu": "home",
+    "message_id": 7852,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:22:36.097"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 56,
+  "fields": {
+    "user": 1,
+    "text": "/start",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7864,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:46:43.198"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 57,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\uded2 Cart",
+    "from_menu": "home",
+    "current_menu": "finish_order",
+    "to_menu": "home",
+    "message_id": 7866,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:46:46.181"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 58,
+  "fields": {
+    "user": 1,
+    "text": "Back",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7868,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:55:10.041"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 59,
+  "fields": {
+    "user": 1,
+    "text": "\ud83d\uded2 Cart",
+    "from_menu": "home",
+    "current_menu": "finish_order",
+    "to_menu": "home",
+    "message_id": 7871,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T14:55:46.956"
+  }
+},
+{
+  "model": "bot.command",
+  "pk": 60,
+  "fields": {
+    "user": 1,
+    "text": "Back",
+    "from_menu": "home",
+    "current_menu": null,
+    "to_menu": "home",
+    "message_id": 7873,
+    "category_id": null,
+    "product_id": null,
+    "date": "2020-02-22T15:56:02.803"
+  }
+},
+{
+  "model": "product.category",
+  "pk": 1,
+  "fields": {
+    "name": "Lavash",
+    "parent": null,
+    "available": true
+  }
+},
+{
+  "model": "product.category",
+  "pk": 2,
+  "fields": {
+    "name": "Donar",
+    "parent": null,
+    "available": true
+  }
+},
+{
+  "model": "product.category",
+  "pk": 3,
+  "fields": {
+    "name": "Hot-dog",
+    "parent": null,
+    "available": true
+  }
+},
+{
+  "model": "product.category",
+  "pk": 4,
+  "fields": {
+    "name": "Shaurma",
+    "parent": null,
+    "available": true
+  }
+},
+{
+  "model": "product.category",
+  "pk": 5,
+  "fields": {
+    "name": "Ichimliklar",
+    "parent": null,
+    "available": true
+  }
+},
+{
+  "model": "product.category",
+  "pk": 6,
+  "fields": {
+    "name": "Desert",
+    "parent": null,
+    "available": true
+  }
+},
+{
+  "model": "product.product",
+  "pk": 1,
+  "fields": {
+    "name": "Tovuqli lavash",
+    "category": 1,
+    "price": 12000,
+    "available": true
+  }
+},
+{
+  "model": "product.product",
+  "pk": 2,
+  "fields": {
+    "name": "Go'shtli lavash",
+    "category": 1,
+    "price": 14000,
+    "available": true
+  }
+},
+{
+  "model": "product.product",
+  "pk": 3,
+  "fields": {
+    "name": "Katta donar",
+    "category": 2,
+    "price": 15000,
+    "available": true
+  }
+},
+{
+  "model": "product.product",
+  "pk": 4,
+  "fields": {
+    "name": "Kichik donar",
+    "category": 2,
+    "price": 13000,
+    "available": true
+  }
+},
+{
+  "model": "product.product",
+  "pk": 5,
+  "fields": {
+    "name": "Classic",
+    "category": 3,
+    "price": 8000,
+    "available": true
+  }
+},
+{
+  "model": "product.product",
+  "pk": 6,
+  "fields": {
+    "name": "Shohona",
+    "category": 3,
+    "price": 12000,
+    "available": true
+  }
+},
+{
+  "model": "product.product",
+  "pk": 7,
+  "fields": {
+    "name": "Big shaurma",
+    "category": 4,
+    "price": 16000,
+    "available": true
+  }
+},
+{
+  "model": "product.product",
+  "pk": 8,
+  "fields": {
+    "name": "Little shaurma",
+    "category": 4,
+    "price": 14000,
+    "available": true
+  }
+},
+{
+  "model": "product.product",
+  "pk": 9,
+  "fields": {
+    "name": "Cola",
+    "category": 5,
+    "price": 9000,
+    "available": true
+  }
+},
+{
+  "model": "product.product",
+  "pk": 10,
+  "fields": {
+    "name": "Fanta",
+    "category": 5,
+    "price": 8500,
+    "available": true
+  }
+},
+{
+  "model": "product.product",
+  "pk": 11,
+  "fields": {
+    "name": "Cake",
+    "category": 6,
+    "price": 12000,
+    "available": true
+  }
+},
+{
+  "model": "product.product",
+  "pk": 12,
+  "fields": {
+    "name": "Ice Cream",
+    "category": 6,
+    "price": 15000,
+    "available": true
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add telegram user",
+    "content_type": 7,
+    "codename": "add_telegramuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change telegram user",
+    "content_type": 7,
+    "codename": "change_telegramuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete telegram user",
+    "content_type": 7,
+    "codename": "delete_telegramuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view telegram user",
+    "content_type": 7,
+    "codename": "view_telegramuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add feedback",
+    "content_type": 8,
+    "codename": "add_feedback"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change feedback",
+    "content_type": 8,
+    "codename": "change_feedback"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete feedback",
+    "content_type": 8,
+    "codename": "delete_feedback"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view feedback",
+    "content_type": 8,
+    "codename": "view_feedback"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add command",
+    "content_type": 9,
+    "codename": "add_command"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change command",
+    "content_type": 9,
+    "codename": "change_command"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete command",
+    "content_type": 9,
+    "codename": "delete_command"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view command",
+    "content_type": 9,
+    "codename": "view_command"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add cart",
+    "content_type": 10,
+    "codename": "add_cart"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change cart",
+    "content_type": 10,
+    "codename": "change_cart"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete cart",
+    "content_type": 10,
+    "codename": "delete_cart"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view cart",
+    "content_type": 10,
+    "codename": "view_cart"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add category",
+    "content_type": 11,
+    "codename": "add_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change category",
+    "content_type": 11,
+    "codename": "change_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete category",
+    "content_type": 11,
+    "codename": "delete_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view category",
+    "content_type": 11,
+    "codename": "view_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add product",
+    "content_type": 12,
+    "codename": "add_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change product",
+    "content_type": 12,
+    "codename": "change_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete product",
+    "content_type": 12,
+    "codename": "delete_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view product",
+    "content_type": 12,
+    "codename": "view_product"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add order",
+    "content_type": 13,
+    "codename": "add_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change order",
+    "content_type": 13,
+    "codename": "change_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete order",
+    "content_type": 13,
+    "codename": "delete_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view order",
+    "content_type": 13,
+    "codename": "view_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add cart item",
+    "content_type": 14,
+    "codename": "add_cartitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change cart item",
+    "content_type": 14,
+    "codename": "change_cartitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete cart item",
+    "content_type": 14,
+    "codename": "delete_cartitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view cart item",
+    "content_type": 14,
+    "codename": "view_cartitem"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$180000$RncoQCFw0503$yB+8iMLodJoSd0B8nS5Ew4FzmtH9ccd7xG5excpGZXk=",
+    "last_login": "2020-02-22T13:11:01.442",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-02-22T13:09:13.478",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2020-02-22T13:11:39.366",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "Lavash",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2020-02-22T13:11:44.362",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "2",
+    "object_repr": "Donar",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2020-02-22T13:11:57.643",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "3",
+    "object_repr": "Hot-dog",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2020-02-22T13:12:11.938",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "4",
+    "object_repr": "Shaurma",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2020-02-22T13:12:18.318",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "5",
+    "object_repr": "Ichimliklar",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2020-02-22T13:12:27.684",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "6",
+    "object_repr": "Desert",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2020-02-22T13:12:59.418",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "1",
+    "object_repr": "Lavash - Tovuqli lavash",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2020-02-22T13:13:08.817",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "2",
+    "object_repr": "Lavash - Go'shtli lavash",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2020-02-22T13:13:29.402",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "3",
+    "object_repr": "Donar - Katta donar",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2020-02-22T13:13:41.847",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "4",
+    "object_repr": "Donar - Kichik donar",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2020-02-22T13:13:53.135",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "5",
+    "object_repr": "Hot-dog - Classic",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2020-02-22T13:14:06.092",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "6",
+    "object_repr": "Hot-dog - Shohona",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2020-02-22T13:14:23.567",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "7",
+    "object_repr": "Shaurma - Big shaurma",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2020-02-22T13:14:37.837",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "8",
+    "object_repr": "Shaurma - Little shaurma",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2020-02-22T13:14:53.576",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "9",
+    "object_repr": "Ichimliklar - Cola",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2020-02-22T13:15:02.995",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "10",
+    "object_repr": "Ichimliklar - Fanta",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2020-02-22T13:15:28.869",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "11",
+    "object_repr": "Desert - Cake",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2020-02-22T13:15:56.424",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "12",
+    "object_repr": "Desert - Ice Cream",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2020-02-22T15:56:19.036",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "3",
+    "object_repr": "0",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2020-02-22T15:56:32.802",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "\u0e53\u0e04\u0e23h\u0433\u0e04\u0e52 0",
+    "action_flag": 3,
+    "change_message": ""
+  }
+}
+]
