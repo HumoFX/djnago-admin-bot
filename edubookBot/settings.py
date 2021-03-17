@@ -40,7 +40,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'foodDelivery.urls'
+ROOT_URLCONF = 'edubookBot.urls'
 
 TEMPLATES = [
     {
