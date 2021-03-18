@@ -15,7 +15,7 @@ services:
 
   web:
     restart: always
-    image: autolib:latest
+    image: edubook:latest
     build: .
     command: sh run.sh
     volumes:
