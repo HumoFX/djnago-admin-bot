@@ -6,3 +6,4 @@ urlpatterns = [
     path('', include('django_telegrambot.urls')),
     path('', include('bot.urls')),
 ]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
