@@ -68,9 +68,9 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'bot_db',
-        'USER': 'bot_admin',
-        'PASSWORD': 'admin',
+        'NAME': 'edubookbot',
+        'USER': 'postgres',
+        'PASSWORD': '123123d.',
         'HOST': 'localhost',
         'PORT': 5432,
     }
