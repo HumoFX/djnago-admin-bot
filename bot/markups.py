@@ -26,7 +26,7 @@ def university_markup(lang):
     else:
         universities = list(University.objects.all().values_list('name', flat=True))
     universities.append(constants.messages[lang][constants.back_menu])
-    return ReplyKeyboardMarkup([universities])
+    return ReplyKeyboardMarkup([universities[i:i + 2] for i in range(0, len(universities), 2)])
 
 
 def home_markup(lang):
@@ -63,20 +63,20 @@ def categories_markup(lang):
 
 def product_list(query, lang, offset, limit):
     count = Product.objects.filter(query).count()
-    print(f"count {count}")
-    print(f"off {offset}")
     products = list(Product.objects.filter(query)[offset:offset + limit].values_list('title', 'id'))
     keyboard = []
+    buttons = []
     button = offset + 1
     for product in products:
         keyboard.append(InlineKeyboardButton(button, callback_data=f'{product[1]}'))
         button += 1
     if offset > 0:
-        keyboard.append(InlineKeyboardButton("left", callback_data=f"offset:{offset - limit}"))
+        buttons.append(InlineKeyboardButton("◀️", callback_data=f"offset:{offset - limit}"))
     if count > offset + limit:
-        keyboard.append(InlineKeyboardButton("right", callback_data=f"offset:{offset + limit}"))
+        buttons.append(InlineKeyboardButton("▶️", callback_data=f"offset:{offset + limit}"))
+    keyboard.append(*buttons)
 
-    return {'text': products, 'keyboard': InlineKeyboardMarkup([keyboard[i:i + 5] for i in range(0, len(keyboard), 5)])}
+    return {'text': products, 'count': count, 'keyboard': InlineKeyboardMarkup([keyboard[i:i + 5] for i in range(0, len(keyboard), 5)])}
 
 
 pieces = [str(x) for x in (range(1, 10))]

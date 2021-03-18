@@ -60,7 +60,7 @@ def bot_control(update: Update, context: CallbackContext):
     if update.message.text == 'Home':
         Controller(context.bot, update, user).go_home()
 
-    elif update.message.text in ["Orqaga", 'Back', "Назад", "orqaga", 'back', "назад"]:
+    elif update.message.text in ["🔙 Orqaga", '🔙 Back', "🔙 Назад", "orqaga", 'back', "назад"]:
         Controller(context.bot, update, user).go_home()
 
     elif last_command.to_menu == constants.language:
@@ -89,7 +89,13 @@ def bot_control(update: Update, context: CallbackContext):
 
 
 def main():
+    updater = DjangoTelegramBot.updater
+
     dp = DjangoTelegramBot.dispatcher
     dp.add_handler(MessageHandler(Filters.all, bot_control))
     dp.add_handler(CallbackQueryHandler(bot_inline_control))
     dp.add_handler(MessageHandler(Filters.sticker, sticker))
+
+    # updater.start_polling()
+    # updater.idle()
+    # updater.idle()

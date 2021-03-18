@@ -1,12 +1,12 @@
 DJANGO_TELEGRAMBOT = {
 
-    'MODE': 'WEBHOOK',  # (Optional [str]) # The default value is WEBHOOK,
+    'MODE': 'POLLING',  # (Optional [str]) # The default value is WEBHOOK,
     # otherwise you may use 'POLLING'
     # NB: if use polling you must provide to run
     # a management command that starts a worker
 
-    'WEBHOOK_SITE': 'https://a5f49a243497.ngrok.io',
-    'WEBHOOK_PREFIX': '/admin',
+    # 'WEBHOOK_SITE': 'https://a5f49a243497.ngrok.io',
+    # 'WEBHOOK_PREFIX': '/admin',
     # 'WEBHOOK_PREFIX': '/prefix',  # (Optional[str]) # If this value is specified,
     # a prefix is added to webhook url
 

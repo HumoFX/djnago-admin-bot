@@ -2,7 +2,7 @@ import requests
 from django.core.exceptions import ValidationError
 from django.db import models
 
-from foodDelivery.local_settings import DJANGO_TELEGRAMBOT
+from edubookBot.local_settings import DJANGO_TELEGRAMBOT
 
 
 class University(models.Model):

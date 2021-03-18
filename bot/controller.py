@@ -92,7 +92,7 @@ class Controller:
             search_arg = self.update.message.text
             query = Q(author__icontains=search_arg) | Q(title__icontains=search_arg)
             markup = markups.product_list(query, self.get_lang(), offset, constants.LIMIT)
-            text = constants.messages[self.get_lang()][constants.choose_type_msg]
+            text = constants.messages[self.get_lang()][constants.search_res].format(markup['count'])
             products = markup['text']
             print(f"pr {products}")
             for product in products:
@@ -108,8 +108,7 @@ class Controller:
                             to_menu=constants.pieces)
 
         elif self.last_command.from_menu == constants.home:
-            # text = constants.messages[self.get_lang()][constants.ca]
-            text = "Search"
+            text = constants.messages[self.get_lang()][constants.search_text]
             self.bot.sendMessage(self.update.message.chat_id,
                                  text=text,
                                  reply_markup=markups.back_markup(self.get_lang()))
@@ -220,7 +219,7 @@ class Controller:
 
     def category_select(self):
         self.bot.sendMessage(self.update.message.chat_id,
-                             text='Menu',
+                             text=constants.messages[self.get_lang()][constants.choose_type_msg],
                              reply_markup=markups.categories_markup(self.get_lang()))
         command_logging(user=self.user,
                         message_id=self.update.message.message_id,
@@ -244,7 +243,7 @@ class Controller:
         offset = self.last_command.offset
         query = Q(category_id=category.id)
         markup = markups.product_list(query, self.get_lang(), offset, constants.LIMIT)
-        text = constants.messages[self.get_lang()][constants.choose_type_msg]
+        text = constants.messages[self.get_lang()][constants.search_res].format(markup['count'])
         products = markup['text']
         for product in products:
             text += f"\n {product[0]}"
@@ -284,7 +283,7 @@ class Controller:
                 elif last_command.current_menu == constants.cart_menu or category_id is None:
                     query_filter = Q(author__icontains=search_text) | Q(title__icontains=search_text)
                 markup = markups.product_list(query_filter, self.get_lang(), int(offset), constants.LIMIT)
-                text = constants.messages[self.get_lang()][constants.choose_type_msg]
+                text = constants.messages[self.get_lang()][constants.choose_book_msg]
                 products = markup['text']
                 for product in products:
                     text += f"\n {product[0]}"
