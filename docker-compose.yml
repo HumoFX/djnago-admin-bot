@@ -9,7 +9,7 @@ services:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
     volumes:
-      - /private/var/lib/postgresql/data:/var/lib/postgresql/data
+      - ./pgdata:/var/lib/postgresql/data
       - .:/code
 
 
