@@ -1,0 +1,13 @@
+*__pycache__/
+db.sqlite3
+__pycache__/
+*.pyc
+.idea
+static
+.venvy/
+.idea/
+media/
+venvy
+book/
+venv
+.env
