@@ -69,7 +69,7 @@ DATABASES = {
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'edubookbot',
-        'USER': 'postgres',
+        'USER': 'humofx',
         'PASSWORD': '123123d.',
         'HOST': 'localhost',
         'PORT': 5432,
@@ -105,6 +105,7 @@ USE_L10N = True
 USE_TZ = False
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGGING = {
     'version': 1,
