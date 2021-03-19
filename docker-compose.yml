@@ -29,4 +29,4 @@ services:
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_HOST=localhost
-      - DB_PORT=5432
+      - DB_PORT=5432:5432

@@ -96,6 +96,6 @@ def main():
     dp.add_handler(CallbackQueryHandler(bot_inline_control))
     dp.add_handler(MessageHandler(Filters.sticker, sticker))
 
-    # updater.start_polling()
-    # updater.idle()
+    updater.start_polling()
+    updater.idle()
     # updater.idle()
