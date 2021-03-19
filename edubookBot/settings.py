@@ -71,7 +71,7 @@ DATABASES = {
         'NAME': 'edubookbot',
         'USER': 'humofx',
         'PASSWORD': '123123d.',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': 5432,
     }
 }
