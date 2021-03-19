@@ -1,2 +1,0 @@
-# edubookBot
-Telegram Bot
