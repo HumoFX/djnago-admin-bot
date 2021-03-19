@@ -89,13 +89,13 @@ def bot_control(update: Update, context: CallbackContext):
 
 
 def main():
-    updater = DjangoTelegramBot.updater
+    # updater = DjangoTelegramBot.updater
 
     dp = DjangoTelegramBot.dispatcher
     dp.add_handler(MessageHandler(Filters.all, bot_control))
     dp.add_handler(CallbackQueryHandler(bot_inline_control))
     dp.add_handler(MessageHandler(Filters.sticker, sticker))
 
-    updater.start_polling()
-    updater.idle()
+    # updater.start_polling()
+    # updater.idle()
     # updater.idle()

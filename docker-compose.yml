@@ -31,3 +31,21 @@ services:
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_HOST=db
       - DB_POSRT=5432
+  bot:
+    image: edubook:latest
+    build: .
+    command: sh bot.sh
+    volumes:
+      - .:/code
+    ports:
+      - "8002:8002:
+    depends_on:
+      - db
+      - web
+    environment:
+      - INDOCKER=1
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_HOST=db
+      - DB_POSRT=5432
