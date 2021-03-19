@@ -67,7 +67,7 @@ class Product(models.Model):
         else:
             self.photo_id = response.json()['result']['photo'][0]['file_id']
         super(Product, self).save()
-        self.deep_link = f"https://t.me/edubooksbot?start={self.id}"
+        self.deep_link = f"https://telegram.me/edubooksbot?start={self.id}"
         return super(Product, self).save()
 
 
