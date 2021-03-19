@@ -74,7 +74,8 @@ def product_list(query, lang, offset, limit):
         buttons.append(InlineKeyboardButton("◀️", callback_data=f"offset:{offset - limit}"))
     if count > offset + limit:
         buttons.append(InlineKeyboardButton("▶️", callback_data=f"offset:{offset + limit}"))
-    keyboard.append(*buttons)
+    if buttons:
+        keyboard.append(*buttons)
 
     return {'text': products, 'count': count, 'keyboard': InlineKeyboardMarkup([keyboard[i:i + 5] for i in range(0, len(keyboard), 5)])}
 
