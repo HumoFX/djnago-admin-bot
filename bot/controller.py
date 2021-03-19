@@ -63,9 +63,8 @@ class Controller:
         command_logging(user=self.user,
                         message_id=self.update.message.message_id,
                         text=self.update.message.text,
-                        from_menu=constants.product,
-                        current_menu=constants.pieces,
-                        to_menu=constants.add_to_cart)
+                        from_menu=constants.home,
+                        to_menu=constants.home)
 
     def home_control(self):
         if self.update.message.text == constants.messages[self.get_lang()][constants.make_order_menu]:

@@ -3,8 +3,9 @@ import logging
 from django.db.models import Q
 
 from bot import constants, markups
+from bot.controller import Controller
 from bot.models import Command, TelegramUser
-from bot.constants import language
+from bot.constants import language, cart
 from product.models import University
 
 logger = logging.getLogger(__name__)
@@ -31,21 +32,33 @@ def register(bot, user: TelegramUser, update):
             user.university = university.first()
             user.is_registered = True
             user.save()
-            Command.objects.create(user=user,
-                                   message_id=update.message.message_id,
-                                   text=constants.register,
-                                   to_menu=constants.home)
-            return bot.sendMessage(update.message.chat_id,
-                                   text=constants.register_succeed_msg,
-                                   reply_markup=markups.home_markup(get_lang(user)))
+            bot.sendMessage(update.message.chat_id,
+                            text=constants.register_succeed_msg,
+                            reply_markup=markups.home_markup(get_lang(user)))
+            if Command.objects.filter(user=user).last().product_id:
+
+                deep_link = Command.objects.filter(user=user).last().product_id
+                return Controller(bot, update, user, cart).start_deep_linking(deep_link)
+            else:
+                return Command.objects.create(user=user,
+                                              message_id=update.message.message_id,
+                                              text=constants.register,
+                                              to_menu=constants.home)
         else:
             bot.sendMessage(update.message.chat_id,
                             text=constants.ask_contact_msg,
                             reply_markup=markups.university_markup(get_lang(user)))
-            Command.objects.create(user=user,
-                                   message_id=update.message.message_id,
-                                   text=update.message.text,
-                                   to_menu=constants.home)
+            if update.message.text.__contains__('/start') and len(update.message.text) > constants.deep_linking:
+                Command.objects.create(user=user,
+                                       message_id=update.message.message_id,
+                                       text=update.message.text,
+                                       product_id=update.message.text[constants.deep_linking:],
+                                       to_menu=constants.home)
+            else:
+                Command.objects.create(user=user,
+                                       message_id=update.message.message_id,
+                                       text=update.message.text,
+                                       to_menu=constants.home)
             return None
 
     if user.university is None:

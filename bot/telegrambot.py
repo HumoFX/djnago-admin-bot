@@ -1,4 +1,4 @@
-from django_telegrambot.apps import DjangoTelegramBot
+from django_telegrambot.apps import DjangoTelegramBot, logger
 from telegram import Update
 from telegram.ext import MessageHandler, Filters, CallbackQueryHandler, CallbackContext
 
@@ -6,6 +6,13 @@ from bot import constants
 from bot.base_commands import register, sticker
 from bot.controller import Controller
 from bot.models import TelegramUser, Command
+
+
+def error(update: Update, context: CallbackContext, error):
+    if error.message == "Message is not modified":
+        # print your string
+        return
+    logger.warning('Update "%s" caused error "%s"' % (update, error))
 
 
 def bot_inline_control(update: Update, context: CallbackContext):
@@ -48,9 +55,11 @@ def bot_control(update: Update, context: CallbackContext):
         cart = None
     if not user.is_registered:
         return register(context.bot, user, update)
-    print(user)
     if update.message.text == '/start':
         Controller(context.bot, update, user).start()
+    if update.message.text.__contains__('/start') and len(update.message.text) > constants.deep_linking:
+        deep_link = update.message.text[constants.deep_linking:]
+        Controller(context.bot, update, user).start_deep_linking(deep_link)
 
     try:
         last_command = Command.objects.filter(user=user).last()
@@ -95,6 +104,7 @@ def main():
     dp.add_handler(MessageHandler(Filters.all, bot_control))
     dp.add_handler(CallbackQueryHandler(bot_inline_control))
     dp.add_handler(MessageHandler(Filters.sticker, sticker))
+    # dp.add_handler(M)
 
     # updater.start_polling()
     # updater.idle()
