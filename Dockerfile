@@ -7,4 +7,4 @@ RUN pip install -r requirements.txt
 # copy entrypoint.sh
 COPY ./entrypoint.sh .
 COPY . /code/
-ENTRYPOINT ["/root/edubookBot/entrypoint.sh"]
+CMD bash entrypoint.sh
