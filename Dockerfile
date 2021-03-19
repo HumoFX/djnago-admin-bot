@@ -4,4 +4,7 @@ RUN mkdir /code
 WORKDIR /code
 COPY requirements.txt /code/
 RUN pip install -r requirements.txt
+# copy entrypoint.sh
+COPY ./entrypoint.sh .
 COPY . /code/
+ENTRYPOINT ["/root/edubookBot/entrypoint.sh"]
