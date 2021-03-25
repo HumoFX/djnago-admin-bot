@@ -6,16 +6,17 @@ from product.models import Order, Product, Category
 
 
 def command_logging(user, message_id, text, from_menu=None, current_menu=None, to_menu=None, offset=0,
-                    category_id=None, update=False):
+                    category_id=None, update=False, product=None):
     if update:
         Command.objects.filter(message_id=message_id,
                                user=user).update(
-                               text=text,
-                               from_menu=from_menu,
-                               current_menu=current_menu,
-                               to_menu=to_menu,
-                               offset=offset,
-                               category_id=category_id)
+            text=text,
+            from_menu=from_menu,
+            current_menu=current_menu,
+            to_menu=to_menu,
+            offset=offset,
+            category_id=category_id,
+            product=product)
     else:
         Command.objects.create(user=user,
                                message_id=message_id,
@@ -24,7 +25,8 @@ def command_logging(user, message_id, text, from_menu=None, current_menu=None, t
                                current_menu=current_menu,
                                to_menu=to_menu,
                                offset=offset,
-                               category_id=category_id)
+                               category_id=category_id,
+                               product=product)
 
 
 class Controller:
@@ -48,7 +50,7 @@ class Controller:
             self.user.first_name if self.user.first_name else 'User')
         self.bot.sendMessage(self.update.message.chat_id,
                              text=text,
-                             reply_markup=markups.home_markup(self.get_lang()))
+                             reply_markup=markups.home_markup(self.get_lang(), user=self.user.user))
         command_logging(user=self.user,
                         message_id=self.update.message.message_id,
                         text=self.update.message.text,
@@ -153,7 +155,7 @@ class Controller:
 
             self.bot.sendMessage(self.update.message.chat_id,
                                  text=text,
-                                 reply_markup=markups.home_markup(self.get_lang()))
+                                 reply_markup=markups.home_markup(self.get_lang(), self.user.user))
             command_logging(user=self.user,
                             message_id=self.update.message.message_id,
                             text=self.update.message.text,
@@ -177,7 +179,7 @@ class Controller:
             text = constants.messages[self.get_lang()][constants.feedback_succeed_msg]
             self.bot.sendMessage(self.update.message.chat_id,
                                  text=text,
-                                 reply_markup=markups.home_markup(self.get_lang()))
+                                 reply_markup=markups.home_markup(self.get_lang(), self.user.user))
             command_logging(user=self.user,
                             message_id=self.update.message.message_id,
                             text=self.update.message.text,
@@ -199,7 +201,7 @@ class Controller:
     def go_home(self):
         self.bot.sendMessage(self.update.message.chat_id,
                              text=constants.messages[self.get_lang()][constants.welcome_msg],
-                             reply_markup=markups.home_markup(self.get_lang()))
+                             reply_markup=markups.home_markup(self.get_lang(), self.user.user))
         command_logging(user=self.user,
                         message_id=self.update.message.message_id,
                         text=self.update.message.text,
@@ -209,7 +211,7 @@ class Controller:
     def go_back(self):
         self.bot.sendMessage(self.update.message.chat_id,
                              text='Back',
-                             reply_markup=markups.home_markup(self.get_lang()))
+                             reply_markup=markups.home_markup(self.get_lang(), self.user.user))
         command_logging(user=self.user,
                         message_id=self.update.message.message_id,
                         text=self.update.message.text,
@@ -319,3 +321,26 @@ class Controller:
                                 current_menu=constants.pieces,
                                 to_menu=last_command.current_menu,
                                 update=True)
+
+    def add_book(self, product=None):
+        print(self.last_command)
+        if not hasattr(self.last_command, 'product'):
+            self.bot.sendMessage(chat_id=self.update.message.chat_id,
+                                 text='SEND FILE')
+            command_logging(user=self.user,
+                            message_id=self.update.message.message_id,
+                            text=self.update.message.text,
+                            from_menu=constants.home,
+                            current_menu=constants.add_book,
+                            product=None
+                            )
+        else:
+            self.bot.sendMessage(chat_id=self.update.message.chat_id,
+                                 text='SEND PHOTO')
+            command_logging(user=self.user,
+                            message_id=self.update.message.message_id,
+                            text=self.update.message.text,
+                            from_menu=constants.add_book,
+                            current_menu=constants.add_book,
+                            product=product,
+                            update=True)

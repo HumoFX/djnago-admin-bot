@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 from bot import constants
@@ -10,6 +11,7 @@ class TelegramUser(models.Model):
     first_name = models.CharField(max_length=255, blank=True, null=True)
     last_name = models.CharField(max_length=255, blank=True, null=True)
     username = models.CharField(max_length=255, blank=True, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     phone_number = models.CharField(max_length=16, null=True)
     step = models.PositiveSmallIntegerField(default=1)
     language = models.CharField(
@@ -40,6 +42,7 @@ class Command(models.Model):
     message_id = models.PositiveIntegerField()
     category_id = models.PositiveIntegerField(null=True, blank=True)
     product_id = models.PositiveIntegerField(null=True, blank=True)
+    product = models.JSONField(null=True, blank=True)
     offset = models.PositiveIntegerField(default=0)
     date = models.DateTimeField(auto_now_add=True)
 

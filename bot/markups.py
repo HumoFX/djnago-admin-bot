@@ -29,7 +29,7 @@ def university_markup(lang):
     return ReplyKeyboardMarkup([universities[i:i + 2] for i in range(0, len(universities), 2)])
 
 
-def home_markup(lang):
+def home_markup(lang, user=None):
     home = [
         [constants.messages[lang][constants.make_order_menu]],
         [constants.messages[lang][constants.cart_menu],
@@ -37,6 +37,8 @@ def home_markup(lang):
         [constants.messages[lang][constants.language_menu],
          constants.messages[lang][constants.feedback_menu]]
     ]
+    if user and user.is_staff:
+        home.append(['ADD BOOK'])
     return ReplyKeyboardMarkup(home)
 
 

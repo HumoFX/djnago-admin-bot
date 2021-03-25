@@ -15,6 +15,29 @@ def error(update: Update, context: CallbackContext, error):
     logger.warning('Update "%s" caused error "%s"' % (update, error))
 
 
+def file_upload(update: Update, context: CallbackContext):
+    user, created = TelegramUser.objects.get_or_create(
+        telegram_id=update.message.chat.id)
+    print(user)
+    if created:
+        user.first_name = update.message.chat.first_name
+        user.last_name = update.message.chat.last_name
+        user.username = update.message.chat.username
+        user.save()
+    file = context.bot.get_file(update.message.document)
+    print(file)
+    try:
+        last_command = Command.objects.filter(user=user).last()
+    except Command.DoesNotExist:
+        last_command = None
+    print(last_command)
+    Controller(context.bot, update, user, last_command).add_book(product=file)
+
+
+def photo_upload(update: Update, context: CallbackContext):
+    pass
+
+
 def bot_inline_control(update: Update, context: CallbackContext):
     query = update.callback_query
     user, created = TelegramUser.objects.get_or_create(
@@ -69,6 +92,9 @@ def bot_control(update: Update, context: CallbackContext):
     if update.message.text == 'Home':
         Controller(context.bot, update, user).go_home()
 
+    elif update.message.text == 'ADD BOOK':
+        Controller(context.bot, update, user, cart, last_command).add_book()
+
     elif update.message.text in ["🔙 Orqaga", '🔙 Back', "🔙 Назад", "orqaga", 'back', "назад"]:
         Controller(context.bot, update, user).go_home()
 
@@ -80,6 +106,9 @@ def bot_control(update: Update, context: CallbackContext):
 
     elif last_command.to_menu == constants.product:
         Controller(context.bot, update, user, cart, last_command).product_select()
+
+    elif last_command.current_menu == constants.add_book:
+        Controller(context.bot, update, user, cart, last_command).add_book()
 
     elif last_command.current_menu == constants.product:
         Controller(context.bot, update, user, cart, last_command).product_select()
@@ -101,10 +130,11 @@ def main():
     # updater = DjangoTelegramBot.updater
 
     dp = DjangoTelegramBot.dispatcher
-    dp.add_handler(MessageHandler(Filters.all, bot_control))
+    dp.add_handler(MessageHandler(Filters.text, bot_control))
     dp.add_handler(CallbackQueryHandler(bot_inline_control))
     dp.add_handler(MessageHandler(Filters.sticker, sticker))
-    # dp.add_handler(M)
+    dp.add_handler(MessageHandler(Filters.document, file_upload))
+    dp.add_handler(MessageHandler(Filters.photo, photo_upload))
 
     # updater.start_polling()
     # updater.idle()

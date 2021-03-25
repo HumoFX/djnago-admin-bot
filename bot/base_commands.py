@@ -34,7 +34,7 @@ def register(bot, user: TelegramUser, update):
             user.save()
             bot.sendMessage(update.message.chat_id,
                             text=constants.register_succeed_msg,
-                            reply_markup=markups.home_markup(get_lang(user)))
+                            reply_markup=markups.home_markup(get_lang(user), user.user))
             if Command.objects.filter(user=user).last().product_id:
 
                 deep_link = Command.objects.filter(user=user).last().product_id

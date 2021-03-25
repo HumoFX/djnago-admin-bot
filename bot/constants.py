@@ -62,6 +62,7 @@ finished_message = 'Finished'
 search_text = 'Enter title or author of book'
 search_res = 'Found {} according to your request'
 choose_book_msg = 'Choose book'
+add_book = 'ADD BOOK'
 messages = {
     'uz': {
         welcome_msg: 'Xush kelibsiz!',
