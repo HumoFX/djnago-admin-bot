@@ -30,10 +30,10 @@ class Category(models.Model):
 
 class Product(models.Model):
     title = models.CharField(max_length=256, verbose_name='Заглавие')
-    category = models.ForeignKey('Category', on_delete=models.CASCADE)
-    file = models.FileField(upload_to='book/file/', null=True)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE, blank=True, null=True)
+    file = models.FileField(upload_to='book/file/', null=True, blank=True)
     file_id = models.CharField(max_length=256, verbose_name='Файл id в телеграм боте', null=True, blank=True)
-    photo = models.ImageField(upload_to='book/img/', null=True)
+    photo = models.ImageField(upload_to='book/img/', null=True, blank=True)
     photo_id = models.CharField(max_length=256, verbose_name='Фото id в телеграм боте', null=True, blank=True)
     description = models.CharField(max_length=512, verbose_name='Описание', null=True, blank=True)
     author = models.CharField(max_length=512, verbose_name='Автор', null=True, blank=True)
@@ -43,32 +43,32 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.title} \t\t {self.author}"
-
-    def save(self, force_insert=False, force_update=False, using=None,
-             update_fields=None):
-        files = {'document': self.file.file}
-        chat_id = 996288857
-        token = DJANGO_TELEGRAMBOT['BOTS'][0]['TOKEN']
-        data = {'chat_id': chat_id}
-        url = f'https://api.telegram.org/bot{token}/sendDocument'
-        response = requests.post(url, data=data, files=files)
-        print(f"1 -{response.status_code}")
-        if response.status_code != 200:
-            raise ValidationError('Проблемы с файлом')
-        else:
-            self.file_id = response.json()['result']['document']['file_id']
-        photo = {'photo': self.photo}
-        data = {'chat_id': chat_id}
-        url = f'https://api.telegram.org/bot{token}/sendPhoto'
-        response = requests.post(url, data=data, files=photo)
-        print(f"2 - {response.status_code}")
-        if response.status_code != 200:
-            raise ValidationError('Проблемы с файлом')
-        else:
-            self.photo_id = response.json()['result']['photo'][0]['file_id']
-        super(Product, self).save()
-        self.deep_link = f"https://telegram.me/edubooksbot?start={self.id}"
-        return super(Product, self).save()
+    #
+    # def save(self, force_insert=False, force_update=False, using=None,
+    #          update_fields=None):
+    #     files = {'document': self.file.file}
+    #     chat_id = 996288857
+    #     token = DJANGO_TELEGRAMBOT['BOTS'][0]['TOKEN']
+    #     data = {'chat_id': chat_id}
+    #     url = f'https://api.telegram.org/bot{token}/sendDocument'
+    #     response = requests.post(url, data=data, files=files)
+    #     print(f"1 -{response.status_code}")
+    #     if response.status_code != 200:
+    #         raise ValidationError('Проблемы с файлом')
+    #     else:
+    #         self.file_id = response.json()['result']['document']['file_id']
+    #     photo = {'photo': self.photo}
+    #     data = {'chat_id': chat_id}
+    #     url = f'https://api.telegram.org/bot{token}/sendPhoto'
+    #     response = requests.post(url, data=data, files=photo)
+    #     print(f"2 - {response.status_code}")
+    #     if response.status_code != 200:
+    #         raise ValidationError('Проблемы с файлом')
+    #     else:
+    #         self.photo_id = response.json()['result']['photo'][0]['file_id']
+    #     super(Product, self).save()
+    #     self.deep_link = f"https://telegram.me/edubooksbot?start={self.id}"
+    #     return super(Product, self).save()
 
 
 class Order(models.Model):

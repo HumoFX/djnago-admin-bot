@@ -1,5 +1,5 @@
 from django.db.models import Sum, F, Q
-
+import json
 from bot import markups, constants
 from bot.models import Command, Feedback
 from product.models import Order, Product, Category
@@ -322,25 +322,55 @@ class Controller:
                                 to_menu=last_command.current_menu,
                                 update=True)
 
-    def add_book(self, product=None):
-        print(self.last_command)
-        if not hasattr(self.last_command, 'product'):
+    def add_book(self, document=None, photo=None):
+        if document:
             self.bot.sendMessage(chat_id=self.update.message.chat_id,
-                                 text='SEND FILE')
+                                 text='SEND PHOTO',
+                                 reply_markup=markups.back_markup(self.get_lang()))
+            command_logging(user=self.user,
+                            message_id=self.update.message.message_id,
+                            text=self.update.message.document.file_id,
+                            from_menu=constants.add_book,
+                            current_menu=constants.add_book,
+                            product=document)
+
+        elif photo:
+            # print(json.loads(self.last_command.product)['file_id'])
+            product = json.loads(self.last_command.product)
+            Product.objects.create(title=product['file_name'], file_id=product['file_id'], photo_id=photo['file_id'],
+                                   category_id=1)
+            self.bot.sendMessage(chat_id=self.update.message.chat_id,
+                                 text='SEND FILE',
+                                 reply_markup=markups.back_markup(self.get_lang()))
             command_logging(user=self.user,
                             message_id=self.update.message.message_id,
                             text=self.update.message.text,
                             from_menu=constants.home,
                             current_menu=constants.add_book,
-                            product=None
+                            product=document
                             )
+
         else:
-            self.bot.sendMessage(chat_id=self.update.message.chat_id,
-                                 text='SEND PHOTO')
-            command_logging(user=self.user,
-                            message_id=self.update.message.message_id,
-                            text=self.update.message.text,
-                            from_menu=constants.add_book,
-                            current_menu=constants.add_book,
-                            product=product,
-                            update=True)
+            if hasattr(self.last_command, 'product'):
+                print(1)
+                if self.last_command.product is None:
+                    print(self.last_command.product)
+                    self.bot.sendMessage(chat_id=self.update.message.chat_id,
+                                         text='SEND FILE',
+                                         reply_markup=markups.back_markup(self.get_lang()))
+                else:
+                    self.bot.sendMessage(chat_id=self.update.message.chat_id,
+                                         text='SEND PHOTO',
+                                         reply_markup=markups.back_markup(self.get_lang()))
+            else:
+                print(2)
+                self.bot.sendMessage(chat_id=self.update.message.chat_id,
+                                     text='SEND FILE',
+                                     reply_markup=markups.back_markup(self.get_lang()))
+                command_logging(user=self.user,
+                                message_id=self.update.message.message_id,
+                                text=self.update.message.text,
+                                from_menu=constants.home,
+                                current_menu=constants.add_book,
+                                product=None
+                                )

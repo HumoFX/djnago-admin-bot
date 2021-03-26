@@ -18,24 +18,34 @@ def error(update: Update, context: CallbackContext, error):
 def file_upload(update: Update, context: CallbackContext):
     user, created = TelegramUser.objects.get_or_create(
         telegram_id=update.message.chat.id)
-    print(user)
     if created:
         user.first_name = update.message.chat.first_name
         user.last_name = update.message.chat.last_name
         user.username = update.message.chat.username
         user.save()
-    file = context.bot.get_file(update.message.document)
-    print(file)
+    file = update.message.document.to_json()
     try:
         last_command = Command.objects.filter(user=user).last()
     except Command.DoesNotExist:
         last_command = None
-    print(last_command)
-    Controller(context.bot, update, user, last_command).add_book(product=file)
+    Controller(context.bot, update, user, last_command=last_command).add_book(document=file)
 
 
 def photo_upload(update: Update, context: CallbackContext):
-    pass
+    user, created = TelegramUser.objects.get_or_create(
+        telegram_id=update.message.chat.id)
+
+    if created:
+        user.first_name = update.message.chat.first_name
+        user.last_name = update.message.chat.last_name
+        user.username = update.message.chat.username
+        user.save()
+    file = update.message.photo[0]
+    try:
+        last_command = Command.objects.filter(user=user).last()
+    except Command.DoesNotExist:
+        last_command = None
+    Controller(context.bot, update, user, last_command=last_command).add_book(photo=file)
 
 
 def bot_inline_control(update: Update, context: CallbackContext):
