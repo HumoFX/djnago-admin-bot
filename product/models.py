@@ -43,32 +43,12 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.title} \t\t {self.author}"
-    #
-    # def save(self, force_insert=False, force_update=False, using=None,
-    #          update_fields=None):
-    #     files = {'document': self.file.file}
-    #     chat_id = 996288857
-    #     token = DJANGO_TELEGRAMBOT['BOTS'][0]['TOKEN']
-    #     data = {'chat_id': chat_id}
-    #     url = f'https://api.telegram.org/bot{token}/sendDocument'
-    #     response = requests.post(url, data=data, files=files)
-    #     print(f"1 -{response.status_code}")
-    #     if response.status_code != 200:
-    #         raise ValidationError('Проблемы с файлом')
-    #     else:
-    #         self.file_id = response.json()['result']['document']['file_id']
-    #     photo = {'photo': self.photo}
-    #     data = {'chat_id': chat_id}
-    #     url = f'https://api.telegram.org/bot{token}/sendPhoto'
-    #     response = requests.post(url, data=data, files=photo)
-    #     print(f"2 - {response.status_code}")
-    #     if response.status_code != 200:
-    #         raise ValidationError('Проблемы с файлом')
-    #     else:
-    #         self.photo_id = response.json()['result']['photo'][0]['file_id']
-    #     super(Product, self).save()
-    #     self.deep_link = f"https://telegram.me/edubooksbot?start={self.id}"
-    #     return super(Product, self).save()
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        super(Product, self).save()
+        self.deep_link = f"https://telegram.me/edubooksbot?start={self.id}"
+        return super(Product, self).save()
 
 
 class Order(models.Model):
