@@ -337,8 +337,7 @@ class Controller:
         elif photo:
             # print(json.loads(self.last_command.product)['file_id'])
             product = json.loads(self.last_command.product)
-            Product.objects.create(title=product['file_name'], file_id=product['file_id'], photo_id=photo['file_id'],
-                                   category_id=1)
+            Product.objects.create(title=product['file_name'], file_id=product['file_id'], photo_id=photo['file_id'])
             self.bot.sendMessage(chat_id=self.update.message.chat_id,
                                  text='SEND FILE',
                                  reply_markup=markups.back_markup(self.get_lang()))
