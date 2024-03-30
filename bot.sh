@@ -1,1 +1,1 @@
-python3 manage.py botpolling --username=edubooksbot
+python3 manage.py botpolling --username=testyyyggg_bot

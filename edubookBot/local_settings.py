@@ -1,3 +1,5 @@
+import os
+
 DJANGO_TELEGRAMBOT = {
 
     'MODE': 'POLLING',  # (Optional [str]) # The default value is WEBHOOK,
@@ -20,7 +22,7 @@ DJANGO_TELEGRAMBOT = {
 
     'BOTS': [
         {
-            'TOKEN': '1252578313:AAEUQvFPoefwTGU6DEFEr6FZ23GussuLz48',  # Your bot token.
+            'TOKEN': '6954221697:AAHFWO6H3kI0vdRH_L_oAGyyotwAKl2SjsI',  # Your bot token.
 
             # 'ALLOWED_UPDATES':(Optional[list[str]]), # List the types of
             # updates you want your bot to receive. For example, specify
